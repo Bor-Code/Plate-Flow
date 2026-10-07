@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     detector_model_path: str = "weights/detector.onnx"
     detector_confidence_threshold: float = 0.5
+detector_nms_threshold: float = 0.4
     ocr_engine: str = "easyocr"
     database_url: str = "sqlite:///plateflow.db"
     duplicate_window_ms: int = 5000
