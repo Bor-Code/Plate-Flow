@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -39,7 +38,7 @@ class OcrResult:
 @dataclass(frozen=True)
 class PlateReading:
     detection: PlateDetection
-    ocr_result: Optional[OcrResult]
+    ocr_result: OcrResult | None
     is_valid: bool
     timestamp_ms: int
-    track_id: Optional[int] = None
+    track_id: int | None = None

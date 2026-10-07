@@ -1,4 +1,4 @@
-from plateflow.domain.models import BoundingBox, PlateDetection, OcrResult, PlateReading
+from plateflow.domain.models import BoundingBox, OcrResult, PlateDetection, PlateReading
 
 
 def test_bounding_box_properties() -> None:

@@ -1,9 +1,10 @@
-from typing import Protocol, List, Optional
-from plateflow.domain.models import PlateDetection, OcrResult, PlateReading
+from typing import Protocol
+
+from plateflow.domain.models import OcrResult, PlateDetection, PlateReading
 
 
 class Detector(Protocol):
-    def detect(self, image_data: bytes) -> List[PlateDetection]: ...
+    def detect(self, image_data: bytes) -> list[PlateDetection]: ...
 
 
 class OcrEngine(Protocol):
@@ -12,8 +13,8 @@ class OcrEngine(Protocol):
 
 class Tracker(Protocol):
     def update(
-        self, detections: List[PlateDetection], timestamp_ms: int
-    ) -> List[PlateDetection]: ...
+        self, detections: list[PlateDetection], timestamp_ms: int
+    ) -> list[PlateDetection]: ...
 
 
 class PlateRepository(Protocol):

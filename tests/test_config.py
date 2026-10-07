@@ -1,6 +1,7 @@
 import os
-from plateflow.config.settings import get_settings
+
 from plateflow.config.logging import get_logger, setup_logging
+from plateflow.config.settings import get_settings
 
 
 def test_get_settings() -> None:
