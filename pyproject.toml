@@ -1,0 +1,45 @@
+[project]
+name = "plateflow"
+version = "0.1.0"
+description = "Production-grade Automatic Number Plate Recognition (ANPR) system for Turkish license plates"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Boran" }
+]
+dependencies = [
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "pre-commit",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM", "RUF"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "--cov=src/plateflow --cov-report=term-missing"
+testpaths = ["tests"]
